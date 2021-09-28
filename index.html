@@ -1,42 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head> </head>
-  <body>
-    <h1>
-      <a
-        href="index.html"
-        onclick="
+    <head>        
+    </head>
+    <body>
+        <h1><a href="index.html" onclick="
             event.preventDefault();
-            document.querySelector('article').innerHTML = '<h2>Welcome</h2>Welcome is ....';    
-        "
-        >WEB</a
-      >
-    </h1>
-    <ul>
-      <li>
-        <a
-          href="1.html"
-          onclick="
+            article.innerHTML = '<h2>Welcome</h2>Welcome is ....';    
+        ">WEB</a></h1>
+        <ul>
+            <li><a href="1.html" onclick="
                 event.preventDefault();
-                document.querySelector('article').innerHTML = '<h2>html</h2>html is ....';    
-            "
-          >html</a
-        >
-      </li>
-      <li>
-        <a
-          href="2.html"
-          onclick="
+                article.innerHTML = '<h2>html</h2>html is ....';    
+            ">html</a></li>
+            <li><a href="2.html" onclick="
                 event.preventDefault();
-                document.querySelector('article').innerHTML = '<h2>css</h2>css is ....';    
-            "
-          >css</a
-        >
-      </li>
-    </ul>
-    <article>
-      <h2>Welcome</h2>
-      Hello, WEB
-    </article>
-  </body>
+                article.innerHTML = '<h2>css</h2>css is ....';    
+            ">css</a></li>
+        </ul>
+        <article>
+            <h2>Welcome</h2>
+            Hello, WEB
+        </article>
+        <script>
+            var article = document.querySelector('article');
+        </script>
+    </body>
 </html>
