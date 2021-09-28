@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>        
+    <head>     
+        <script>
+            function welcome(){
+                article.innerHTML = '<h2>Welcome</h2>Welcome is ....';    
+            }
+            function html(){
+                article.innerHTML = '<h2>html</h2>html is ....';    
+            }
+            function css(){
+                article.innerHTML = '<h2>css</h2>css is ....';    
+            }
+        </script>
     </head>
     <body>
         <h1><a href="index.html" onclick="
             event.preventDefault();
-            article.innerHTML = '<h2>Welcome</h2>Welcome is ....';    
+            welcome();
         ">WEB</a></h1>
         <ul>
             <li><a href="1.html" onclick="
                 event.preventDefault();
-                article.innerHTML = '<h2>html</h2>html is ....';    
+                html();
             ">html</a></li>
             <li><a href="2.html" onclick="
                 event.preventDefault();
-                article.innerHTML = '<h2>css</h2>css is ....';    
+                css();
             ">css</a></li>
         </ul>
         <article>
-            <h2>Welcome</h2>
-            Hello, WEB
+            
         </article>
         <script>
             var article = document.querySelector('article');
-        </script>
+            welcome();
+        </script>   
     </body>
 </html>
