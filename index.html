@@ -4,7 +4,8 @@
         <script>
             var topics = [
                 {id:1, title:'html', body:'html is ...'},
-                {id:2, title:'css', body:'css is ...'}
+                {id:2, title:'css', body:'css is ...'},
+                {id:3, title:'js', body:'js is ...'}
             ];
             function read_template(title, body){
                 return '<h2>'+title+'</h2>'+body;
@@ -21,7 +22,18 @@
             function nav(){
                 var lis = '';
                 for(i=0; i<topics.length; i=i+1){
-                    lis = lis + `<li><a href="${topics[i].id}.html">${topics[i].title}</a></li>`;
+                    lis = lis + `
+                        <li>
+                            <a 
+                                href="${topics[i].id}.html"
+                                onclick="
+                                    event.preventDefault();
+                                    read(${topics[i].id});
+                                "
+                            >
+                                ${topics[i].title}
+                            </a>
+                        </li>`;
                 }
                 document.querySelector('nav>ul').innerHTML = lis;
             }
