@@ -2,6 +2,7 @@
 <html>
     <head>     
         <script>
+            var nextId = 5;
             var topics = [
                 {id:1, title:'html', body:'html is ...'},
                 {id:2, title:'css', body:'css is ...'},
@@ -41,6 +42,34 @@
                 }
                 document.querySelector('nav>ul').innerHTML = lis;
             }
+            function create(){
+                article.innerHTML = `
+                    <h2>Create</h2>
+                    <form action="https://google.com" onsubmit="
+                        event.preventDefault();    
+                        var title = event.target.title.value;
+                        var body = event.target.body.value;
+                        // topics 에 tilte, body 값으로 이루어진 객체를 추가한다. 
+                        topics.push(
+                            {id:nextId, title:title, body:body}
+                        )
+                        nav();
+                        read(nextId);
+                        nextId = nextId + 1;                        
+                    ">
+                        <p>
+                            <input type="text" name="title" placeholder="title">
+                        </p>
+                        <p>
+                            <textarea name="body" placeholder="body"></textarea>
+                        </p>
+                        <p>
+                            <input type="submit">
+                        </p>
+                    </form>
+
+                `;
+            }
         </script>
     </head>
     <body>
@@ -56,6 +85,13 @@
         <article>
             
         </article>
+        <ul>
+            <li>
+                <input type="button" value="create" onclick="
+                    create();
+                ">
+            </li>
+        </ul>
         <script>
             var article = document.querySelector('article');
             read();
