@@ -2,6 +2,10 @@
 <html>
     <head>     
         <script>
+            var topics = [
+                {id:1, title:'html', body:'html is ...'},
+                {id:2, title:'css', body:'css is ...'}
+            ];
             function read_template(title, body){
                 return '<h2>'+title+'</h2>'+body;
             }
@@ -14,6 +18,13 @@
                     article.innerHTML = read_template('CSS', 'CSS is ...');
                 }
             }
+            function nav(){
+                var lis = '';
+                for(i=0; i<topics.length; i=i+1){
+                    lis = lis + `<li><a href="${topics[i].id}.html">${topics[i].title}</a></li>`;
+                }
+                document.querySelector('nav>ul').innerHTML = lis;
+            }
         </script>
     </head>
     <body>
@@ -21,22 +32,18 @@
             event.preventDefault();
             read();   
         ">WEB</a></h1>
-        <ul>
-            <li><a href="1.html" onclick="
-                event.preventDefault();
-                read(1);   
-            ">html</a></li>
-            <li><a href="2.html" onclick="
-                event.preventDefault();
-                read(2);
-            ">css</a></li>
-        </ul>
+        <nav>
+            <ul>
+                
+            </ul>
+        </nav>
         <article>
             
         </article>
         <script>
             var article = document.querySelector('article');
             article.innerHTML = read_template('Welcome', 'Hello, WEB');
+            nav();
         </script>   
     </body>
 </html>
