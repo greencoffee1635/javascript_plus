@@ -2,22 +2,16 @@
 <html>
     <head>     
         <script>
-            function welcome(){
-                article.innerHTML = '<h2>Welcome</h2>Welcome is ....';    
-            }
-            function html(){
-                article.innerHTML = '<h2>html</h2>html is ....';    
-            }
-            function css(){
-                article.innerHTML = '<h2>css</h2>css is ....';    
+            function read_template(title, body){
+                article.innerHTML = '<h2>'+title+'</h2>'+body;
             }
             function read(id){
                 if(id === undefined){
-                    welcome();
+                    read_template('Welcome', 'Hello, WEB');
                 } else if(id === 1){
-                    html();
+                    read_template('HTML', 'HTML is ..');
                 } else if(id === 2){
-                    css();
+                    read_template('CSS', 'CSS is ...');
                 }
             }
         </script>
@@ -43,3 +37,9 @@
         <article>
             
         </article>
+        <script>
+            var article = document.querySelector('article');
+            read_template('Welcome', 'Hello, WEB');
+        </script>   
+    </body>
+</html>
