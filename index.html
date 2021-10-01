@@ -5,19 +5,23 @@
             var topics = [
                 {id:1, title:'html', body:'html is ...'},
                 {id:2, title:'css', body:'css is ...'},
-                {id:3, title:'js', body:'js is ...'}
+                {id:3, title:'js', body:'js is ...'},
+                {id:4, title:'react', body:'react is ...'}
             ];
             function read_template(title, body){
                 return '<h2>'+title+'</h2>'+body;
             }
             function read(id){
-                if(id === undefined){
-                    article.innerHTML = read_template('Welcome', 'Hello, WEB');
-                } else if(id === 1){
-                    article.innerHTML = read_template('HTML', 'HTML is ..');
-                } else if(id === 2){
-                    article.innerHTML = read_template('CSS', 'CSS is ...');
+                for(var i=0; i<topics.length; i=i+1){
+                    if(topics[i].id === id){
+                        article.innerHTML = read_template(
+                            topics[i].title, 
+                            topics[i].body
+                        );
+                        return;
+                    }
                 }
+                article.innerHTML = read_template('WELCOME', 'Hello, WEB');
             }
             function nav(){
                 var lis = '';
@@ -54,7 +58,7 @@
         </article>
         <script>
             var article = document.querySelector('article');
-            article.innerHTML = read_template('Welcome', 'Hello, WEB');
+            read();
             nav();
         </script>   
     </body>
