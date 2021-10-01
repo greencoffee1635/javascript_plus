@@ -11,21 +11,27 @@
             function css(){
                 article.innerHTML = '<h2>css</h2>css is ....';    
             }
+            function read(id){
+                alert(id);
+            }
         </script>
     </head>
     <body>
         <h1><a href="index.html" onclick="
             event.preventDefault();
-            welcome();
+            // welcome();
+            read();   
         ">WEB</a></h1>
         <ul>
             <li><a href="1.html" onclick="
                 event.preventDefault();
-                html();
+                // html();
+                read(1);   
             ">html</a></li>
             <li><a href="2.html" onclick="
                 event.preventDefault();
-                css();
+                // css();
+                read(2);
             ">css</a></li>
         </ul>
         <article>
