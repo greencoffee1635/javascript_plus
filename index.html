@@ -12,7 +12,13 @@
                 article.innerHTML = '<h2>css</h2>css is ....';    
             }
             function read(id){
-                alert(id);
+                if(id === undefined){
+                    welcome();
+                } else if(id === 1){
+                    html();
+                } else if(id === 2){
+                    css();
+                }
             }
         </script>
     </head>
@@ -37,9 +43,3 @@
         <article>
             
         </article>
-        <script>
-            var article = document.querySelector('article');
-            welcome();
-        </script>   
-    </body>
-</html>
