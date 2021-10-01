@@ -3,15 +3,15 @@
     <head>     
         <script>
             function read_template(title, body){
-                article.innerHTML = '<h2>'+title+'</h2>'+body;
+                return '<h2>'+title+'</h2>'+body;
             }
             function read(id){
                 if(id === undefined){
-                    read_template('Welcome', 'Hello, WEB');
+                    article.innerHTML = read_template('Welcome', 'Hello, WEB');
                 } else if(id === 1){
-                    read_template('HTML', 'HTML is ..');
+                    article.innerHTML = read_template('HTML', 'HTML is ..');
                 } else if(id === 2){
-                    read_template('CSS', 'CSS is ...');
+                    article.innerHTML = read_template('CSS', 'CSS is ...');
                 }
             }
         </script>
@@ -39,7 +39,7 @@
         </article>
         <script>
             var article = document.querySelector('article');
-            read_template('Welcome', 'Hello, WEB');
+            article.innerHTML = read_template('Welcome', 'Hello, WEB');
         </script>   
     </body>
 </html>
