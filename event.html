@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <!-- <input id="btn" type="button" value="click" onclick="event.target.style.backgroundColor='red';">
+        <input id="btn" type="button" value="click" onclick="event.target.style.backgroundColor='red';">  -->
+        <!-- 두번째버튼 작동안함 -->
+        <!-- <input id="btn" type="button" value="click" onclick="this.style.backgroundColor='red';">
+        <input id="btn" type="button" value="click" onclick="this.style.backgroundColor='red';"> -->
+        <!-- 두번째 버튼까지 작동함 -->
+        <!-- <input id="btn" type="button" value="click" onclick="event.target.style.backgroundColor='red';"> 
+        <input id="btn" type="button" value="click" onclick="this.style.backgroundColor='red';"> -->
+        <!-- 둘 다 정상 작동함 -->
+        <input id="btn" type="button" value="click" onclick="
+        console.log('event.altKey', event.altKey);
+        if(event.altKey){
+            event.target.style.backgroundColor='red';
+        } else {
+            event.target.style.backgroundColor='blue';
+        }
+        "> 
+        <input id="btn" type="button" value="click" onclick="
+            this.style.backgroundColor='red';
+        ">
+
+        <form action="" onsubmit="
+            event.preventDefault();
+            console.log(this.event.target);
+            console.log(event.target.title);
+        ">
+            <input type="text" name="title">
+            <input type="submit">
+        </form>
+    </body>
+</html>
